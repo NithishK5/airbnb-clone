@@ -29,13 +29,11 @@ const Page = () => {
   });
 
   const onSelectAuth = async (strategy: Strategy) => {
-    console.log("Selected strategy:", strategy); // Debugging line
     const selectedAuth = {
       oauth_google: googleAuth,
       oauth_apple: appleAuth,
       oauth_facebook: facebookAuth,
     }[strategy];
-    console.log("Selected auth function:", selectedAuth); // Debugging line
 
     try {
       const { createdSessionId, setActive } = await selectedAuth();
